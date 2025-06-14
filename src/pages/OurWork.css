@@ -1,0 +1,235 @@
+/* General page styling */
+.our-work-page {
+  background-color: #f8f9fa;
+  padding-top: 0; /* Navbar handles spacing at the top */
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/singapore/singapore-skyline-hero.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 8rem 0; /* More padding for a grander feel */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh; /* Ensure it takes a decent height */
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section p.lead {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.hero-button {
+  border-radius: 50px;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+  border-width: 2px;
+  transition: all 0.3s ease;
+}
+.hero-button:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+
+/* Section Titles & Lead text */
+.section-title {
+  color: #007bff; /* Primary brand blue */
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+}
+
+.our-work-page p.lead {
+  color: #6c757d;
+  font-size: 1.1rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+/* Background Colors for sections */
+.bg-light-blue {
+  background-color: #e6f2ff; /* A lighter shade of your brand blue */
+}
+.bg-light-gray {
+  background-color: #f2f2f2;
+}
+
+/* Service Cards */
+.service-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 1.5rem; /* Space between cards on smaller screens */
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+  height: 250px; /* Consistent image height */
+  object-fit: cover;
+  width: 100%;
+}
+
+.service-card .card-body {
+  padding: 1.5rem;
+}
+
+.service-card .card-title {
+  color: #343a40;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-card .card-text {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.service-card .btn {
+  border-radius: 30px;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Icons within section titles */
+.icon-primary {
+  color: #007bff;
+}
+.icon-success {
+  color: #28a745;
+}
+.icon-danger {
+  color: #dc3545;
+}
+
+/* Call to Action Section */
+.cta-section {
+  background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.8)), url('../assets/singapore/singapore-night.jpg') no-repeat center center; /* Using brand blue overlay */
+  background-size: cover;
+  color: #fff;
+  padding: 5rem 0;
+  border-radius: 10px; /* Optional: adds rounded corners to the section */
+  margin: 3rem auto; /* Center the CTA if you want it distinct */
+  max-width: 95%; /* Make it slightly narrower than full width */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-section .btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  border-width: 2px;
+}
+
+.cta-section .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.cta-section .btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.cta-section .btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+.cta-section .btn-outline-light:hover {
+    background-color: #fff;
+    color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 6rem 0;
+  }
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+  .hero-section p.lead {
+    font-size: 1.2rem;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 0;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section p.lead {
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .service-card img {
+    height: 200px;
+  }
+  .service-card .card-title {
+    font-size: 1.3rem;
+  }
+  .cta-section {
+    padding: 3rem 0;
+  }
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+  .cta-section .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    margin-bottom: 1rem; /* Stack buttons */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 3rem 0;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section p.lead {
+    font-size: 0.9rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .service-card .card-body {
+    padding: 1rem;
+  }
+  .service-card .card-title {
+    font-size: 1.2rem;
+  }
+  .service-card .card-text {
+    font-size: 0.85rem;
+  }
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+}

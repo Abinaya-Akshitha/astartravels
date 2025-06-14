@@ -1,0 +1,120 @@
+/* src/pages/OnlineBooking.css */
+
+.online-booking-page {
+  padding-top: 56px; /* Adjust if your navbar height is different */
+  background-color: #f8f9fa; /* Light background for the page */
+}
+
+/* Hero Section Styling */
+.online-booking-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/online-booking-hero.jpg') center center no-repeat;
+  background-size: cover;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.online-booking-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.online-booking-hero p {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* General Section Titles */
+.section-title {
+  color: #007bff; /* Primary blue color for titles */
+  margin-bottom: 40px;
+}
+
+/* Booking Form Card Styling */
+.booking-form-card {
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.booking-form-card .form-label {
+  font-weight: 600;
+  color: #343a40;
+}
+
+.booking-form-card .form-control,
+.booking-form-card .form-select {
+  border-radius: 8px;
+  border-color: #ced4da;
+  padding: 10px 15px;
+}
+
+.booking-form-card .form-control:focus,
+.booking-form-card .form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Process Steps Styling */
+.process-step {
+  padding: 20px;
+  background-color: #f0f8ff; /* Lightest blue background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  height: 100%; /* Ensure cards are same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.process-step .step-number {
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.process-step h5 {
+  font-weight: bold;
+  color: #343a40;
+  margin-top: 15px;
+}
+
+.process-step p {
+  color: #6c757d;
+}
+
+/* Background colors */
+.bg-light-blue {
+  background-color: #e9f5ff; /* A very light blue */
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) { /* For mobile phones */
+  .online-booking-hero h1 {
+    font-size: 2.2rem;
+  }
+  .online-booking-hero p {
+    font-size: 1rem;
+  }
+  .booking-form-card {
+    padding: 20px;
+  }
+}

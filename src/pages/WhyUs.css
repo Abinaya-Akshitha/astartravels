@@ -1,0 +1,80 @@
+/* src/pages/WhyUs.css */
+
+.why-us-page {
+  /* Basic styling for the entire page if needed */
+  /* Ensures content starts below the fixed navbar */
+  padding-top: 56px; /* Adjust if your navbar height is different */
+  background-color: #f8f9fa; /* Light background for the page */
+}
+
+/* Hero Section Styling */
+.why-us-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/whyus-hero.jpg') center center no-repeat; /* Add a relevant background image for this section */
+  background-size: cover;
+  min-height: 400px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.why-us-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.why-us-hero p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Features Section Styling */
+.section-title {
+  color: #007bff; /* Primary blue color for titles */
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden; /* Ensures icon doesn't overflow rounded corners */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: #28a745; /* A success green, or choose your brand color */
+  margin-bottom: 15px;
+}
+
+.feature-card .card-title {
+  font-size: 1.5rem;
+  color: #343a40; /* Darker text for titles */
+}
+
+.feature-card .card-text {
+  color: #6c757d; /* Muted text for descriptions */
+}
+
+/* Background colors for sections (match your theme) */
+.bg-light-blue {
+  background-color: #e9f5ff; /* A very light blue */
+}
+
+/* General button styling (if not covered by Bootstrap) */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}

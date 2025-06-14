@@ -1,0 +1,11 @@
+html, body, #root {
+  height: 100%; /* Make sure these elements take 100% of their parent's height */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default paddings */
+  overflow-x: hidden; /* Prevent horizontal scroll bar if content overflows */
+}
+
+/* Optional: Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}

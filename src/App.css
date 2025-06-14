@@ -1,0 +1,146 @@
+/* Your global CSS file (e.g., src/index.css or src/App.css) */
+
+/* --- IMPORTANT: Remove or comment out conflicting #root styles --- */
+/*
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+*/
+/* The above styles will break the full-page layout. */
+
+
+/* --- Essential styles for full-page transitions --- */
+html, body, #root {
+  height: 100%; /* Make sure these elements take full viewport height */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Crucial to prevent native browser scrolling and enable page slides */
+  scroll-behavior: smooth; /* Enhances internal anchor scrolling if used */
+}
+
+/* Ensure the main root container takes full height and flex-direction for children */
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Styles for the animated page-wrapper div --- */
+.page-wrapper {
+  position: absolute; /* Positions pages absolutely to stack them for transition */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Each page takes full height of the viewport */
+  overflow-y: auto; /* Allows content within a page to scroll if it's taller than viewport */
+  overflow-x: hidden; /* Prevents horizontal scrollbars */
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS devices */
+  display: flex; /* Helps content within the page wrapper adjust */
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  will-change: transform, opacity; /* Optimizes animations for better performance */
+  /* This transition duration MUST match the 'timeout' in CSSTransition in App.jsx */
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+  background-color: #f8f9fa; /* Default background for pages, adjust as needed */
+}
+
+/* --- CSSTransition Page Slide Animations --- */
+
+/* State when a new page is about to enter */
+.page-slide-enter {
+  transform: translateY(100%); /* Starts from below the screen */
+  opacity: 0;
+  z-index: 2; /* Ensures the entering page appears on top */
+}
+
+/* State during the entering animation */
+.page-slide-enter-active {
+  transform: translateY(0%); /* Slides up to its final position */
+  opacity: 1;
+  /* Transition property should be duplicated here to ensure it applies */
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+}
+
+/* State when an old page is about to exit */
+.page-slide-exit {
+  transform: translateY(0%); /* Starts from its current visible position */
+  opacity: 1;
+  z-index: 1; /* Ensures the exiting page is behind the entering one */
+}
+
+/* State during the exiting animation */
+.page-slide-exit-active {
+  transform: translateY(-100%); /* Slides upwards out of view */
+  opacity: 0;
+  /* Transition property should be duplicated here to ensure it applies */
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+}
+
+/* --- Adjustments for Page Content and Navigation Bar --- */
+
+/* Apply padding to all your main page components to account for the fixed Navbar */
+.home-page,
+.our-work-page,
+.why-us-page,
+.what-we-offer-page,
+.contact-us-page,
+.online-booking-page {
+  flex-grow: 1; /* Allows page content to fill available vertical space within .page-wrapper */
+  /* Adjust this padding-top to match the actual height of your NavigationBar */
+  padding-top: 56px; /* Example: If your Navbar is 56px tall */
+  padding-bottom: 0; /* No extra padding for footer, as it's outside page-wrapper */
+  box-sizing: border-box; /* Ensures padding is included in element's total height */
+}
+
+/* Ensure your hero sections (if they target 100vh) account for Navbar/Footer */
+/* You'll need to know your exact Navbar and Footer heights */
+.home-page .hero-section,
+.our-work-page .hero-section,
+.why-us-page .why-us-hero,
+.online-booking-page .hero-section, /* Assuming OnlineBooking has a hero */
+.what-we-offer-page .what-we-offer-hero,
+.contact-us-page .contact-us-hero {
+  min-height: calc(100vh - 56px - 70px); /* Adjust 56px (Navbar) and 70px (Footer estimated) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Existing styles (keep if still needed, but ensure they don't conflict) --- */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

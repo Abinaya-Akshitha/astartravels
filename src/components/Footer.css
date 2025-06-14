@@ -1,0 +1,52 @@
+/* src/components/Footer.css */
+.footer {
+  background-color: #343a40 !important; /* Dark background */
+  color: #f8f9fa !important; /* Light text */
+  padding: 3rem 0;
+}
+
+.footer h5 {
+  color: #007bff; /* Accent color for headings */
+  margin-bottom: 1.5rem;
+}
+
+.footer p, .footer li {
+  color: #adb5bd; /* Muted text for content */
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #007bff; /* Primary color on hover */
+}
+
+.footer ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer .text-muted {
+  font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer ul {
+    margin-bottom: 1.5rem;
+  }
+  .footer ul li {
+    margin-bottom: 0.5rem;
+  }
+}
