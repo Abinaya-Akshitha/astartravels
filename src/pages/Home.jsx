@@ -10,7 +10,7 @@ import { Fade } from 'react-awesome-reveal'; // IMPORT THIS for scroll animation
 import OurWork from './OurWork';
 import WhyUs from './WhyUs';
 import WhatWeOffer from './WhatWeOffer';
-import ContactUs from './Contactus';
+import ContactUs from './ContactUs';
 import OnlineBooking from './OnlineBooking'; // Import OnlineBooking now!
 
 function Home() {
