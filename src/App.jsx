@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import OurWork from './pages/OurWork';
 import WhyUs from './pages/WhyUs';
 import WhatWeOffer from './pages/WhatWeOffer';
-import ContactUs from './pages/Contactus';
+import ContactUs from './pages/ContactUs';
 import OnlineBooking from './pages/OnlineBooking';
 
 function AppContent() {
