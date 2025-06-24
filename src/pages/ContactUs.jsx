@@ -158,9 +158,9 @@ function ContactUs() {
                     <FaPhoneAlt className="info-icon mb-3" />
                     <Card.Title className="fw-bold">Call Us</Card.Title>
                     <Card.Text>
-                      <a href="tel:+6596229988">+65 9622 9988</a> (24/7 Support)
+                      <a href="tel:+65 96237241">+65 96237241</a> (24/7 Support)
                     </Card.Text>
-                    <a href="https://wa.me/6596229988" target="_blank" rel="noopener noreferrer" className="btn btn-outline-success btn-sm">
+                    <a href="https://wa.me/6596237241" target="_blank" rel="noopener noreferrer" className="btn btn-outline-success btn-sm">
                       <FaWhatsapp className="me-2" />WhatsApp Us
                     </a>
                   </Card.Body>
@@ -172,7 +172,7 @@ function ContactUs() {
                     <FaEnvelope className="info-icon mb-3" />
                     <Card.Title className="fw-bold">Email Us</Card.Title>
                     <Card.Text>
-                      <a href="mailto:a@gmail.com">a@gmail.com</a>
+                      <a href="mailto:astartravels.sg@gmail.com">astartravels.sg@gmail.com</a>
                     </Card.Text>
                     <Card.Text className="text-muted small">
                       We aim to respond within 24 hours.
