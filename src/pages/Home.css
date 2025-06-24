@@ -60,15 +60,16 @@
 .brand-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Center horizontally */
   margin-bottom: 2.5rem;
+  gap: 15px; /* Space between logo and text */
 }
 
 .brand-logo {
   height: 85px;
   width: auto;
-  margin-right: 10px;
-  margin-bottom:30px;
+  /* Removed margin-right here, using gap in brand-header instead */
+  margin-bottom: 25px; /* Set to 0 to align with text, if flex-align-items is center */
   filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
 }
 
@@ -78,34 +79,35 @@
   font-weight: 700;
   color: #fff;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-  white-space: nowrap;
-  letter-spacing: 0.05rempx;
-  margin-right:90px;
+  white-space: nowrap; /* Keep this for desktop to prevent wrapping */
+  letter-spacing: 0.05rem;
+  margin-right: 0; /* Remove fixed margin-right */
+  text-align: left; /* Ensure text aligns properly if it wraps */
 }
 /* --- END BRANDING --- */
 
 /* --- NEW: 24/7 Availability Image + Text Combo Styling --- */
 .service-24-7-combo {
-  display: flex; /* Use flexbox to align image and text horizontally */
-  align-items: center; /* Vertically center them */
-  justify-content: center; /* Horizontally center the combo */
-  margin-bottom: 0.1rem; /* Reduced space below the combo */
-  gap: 15px; /* Space between the image and the text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.1rem;
+  gap: 15px;
 }
 
 .service-24-7-image {
-  max-width: 80px; /* Adjust size for better integration with text */
+  max-width: 80px;
   height: auto;
   filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
-  animation: pulse 2s infinite ease-in-out; /* Keep the pulse animation */
+  animation: pulse 2s infinite ease-in-out;
 }
 
 .service-24-7-text {
-  font-size: 1.8rem; /* Size of the text */
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #FFD700; /* Gold/yellow color for the text */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Subtle shadow for text */
-  white-space: nowrap; /* Prevent text wrapping */
+  color: #FFD700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  white-space: nowrap;
 }
 
 @keyframes pulse {
@@ -118,30 +120,30 @@
 
 /* --- MODIFIED: 15-Minute Badge (Attractive new style) --- */
 .badge-15min-attractive {
-  font-size: 1.0rem; /* Slightly larger text */
+  font-size: 1.0rem;
   padding: 1rem 2rem !important;
-  border-radius: 20px; /* More rounded */
+  border-radius: 20px;
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(45deg,rgb(230, 226, 18),rgb(234, 234, 6)); /* Vibrant yellow-orange gradient */
-  color: #333 !important; /* Dark text for contrast */
+  background: linear-gradient(45deg,rgb(230, 226, 18),rgb(234, 234, 6));
+  color: #333 !important;
   text-transform: uppercase;
-  letter-spacing: 1.0px; /* More prominent letter spacing */
+  letter-spacing: 1.0px;
   transition: all 0.3s ease-in-out;
-  font-weight: 700; /* Extra bold */
-  margin-top: 0.5rem; /* Maintained smaller top margin */
-  cursor: pointer; /* Indicate it's clickable, even if not linked */
+  font-weight: 700;
+  margin-top: 0.5rem;
+  cursor: pointer;
 }
 
 .badge-15min-attractive:hover {
-  transform: translateY(-3px) scale(1.02); /* More pronounced lift and slight scale on hover */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 0 4px rgba(255, 255, 255, 0.9); /* Stronger hover shadow and outline */
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 0 4px rgba(255, 255, 255, 0.9);
 }
 
 .badge-15min-attractive .me-2 {
-    margin-right: 1rem !important; /* Increased space for the icon */
-    font-size: 1.1remrem; /* Larger, more impactful icon */
-    color: #333; /* Dark color for the bolt icon to contrast with badge */
+    margin-right: 1rem !important;
+    font-size: 1.1rem;
+    color: #333;
 }
 /* --- END MODIFIED 15-MINUTE BADGE --- */
 
@@ -194,7 +196,7 @@
     font-size: 1.4rem;
   }
   .service-24-7-image {
-    max-width: 70px; /* Adjust for smaller screens */
+    max-width: 70px;
   }
   .service-24-7-text {
     font-size: 1.6rem;
@@ -202,8 +204,7 @@
   .badge-15min-attractive {
     font-size: 1.2rem;
     padding: 0.9rem 1.8rem !important;
-        margin-top: 0.1rem; /* Adjust for smaller screens */
-
+    margin-top: 0.1rem;
   }
   .badge-15min-attractive .me-2 {
     font-size: 1.6rem;
@@ -218,7 +219,7 @@
 @media (max-width: 768px) {
   .brand-logo {
     height: 65px;
-    margin-right: 15px;
+    margin-right: 15px; /* Keep this for larger mobile to tablet sizes */
   }
   .brand-name {
     font-size: 2rem;
@@ -238,8 +239,7 @@
   .badge-15min-attractive {
     font-size: 1.1rem;
     padding: 0.8rem 1.6rem !important;
-        margin-top: 0.1rem; /* Adjust for smaller screens */
-
+    margin-top: 0.1rem;
   }
   .badge-15min-attractive .me-2 {
     font-size: 1.4rem;
@@ -257,19 +257,23 @@
   }
 }
 
+/* Targeted Fix for Very Small Mobile Screens (below 576px) */
 @media (max-width: 576px) {
   .brand-header {
-    flex-direction: column;
+    flex-direction: column; /* Stack logo and text vertically */
     margin-bottom: 1rem;
+    gap: 5px; /* Reduce gap when stacked */
   }
   .brand-logo {
-    margin-right: 0;
-    margin-bottom: 10px;
+    margin-right: 0; /* Remove horizontal margin */
+    margin-bottom: 10px; /* Add vertical margin */
     height: 55px;
   }
   .brand-name {
     font-size: 1.7rem;
-    text-align: center;
+    text-align: center; /* Center the text when stacked */
+    white-space: normal; /* Allow text to wrap on very small screens */
+    margin-right: 0; /* Ensure no horizontal margin */
   }
   .content h1 {
     font-size: 2rem;
@@ -280,19 +284,22 @@
     margin-bottom: 2rem;
   }
   .service-24-7-combo {
-    margin-bottom: 0.05rem; 
+    flex-direction: column; /* Stack 24/7 image and text */
+    gap: 5px;
+    margin-bottom: 0.5rem; /* Adjust spacing */
   }
   .service-24-7-image {
     max-width: 50px;
   }
   .service-24-7-text {
     font-size: 1.2rem;
+    text-align: center;
   }
   .badge-15min-attractive {
     font-size: 1rem;
     padding: 0.7rem 1.4rem !important;
-        margin-top: 0.05rem; /* Adjust for very small screens */
-
+    margin-top: 0.05rem;
+    display: inline-flex; /* Keep it inline-flex to center better within parent */
   }
   .badge-15min-attractive .me-2 {
     font-size: 1.2rem;
