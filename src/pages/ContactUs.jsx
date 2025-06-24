@@ -180,21 +180,7 @@ function ContactUs() {
                   </Card.Body>
                 </Card>
 
-                {/* Location Card */}
-                <Card className="info-card shadow-sm text-center">
-                  <Card.Body>
-                    <FaMapMarkerAlt className="info-icon mb-3" />
-                    <Card.Title className="fw-bold">Our Location</Card.Title>
-                    <Card.Text>
-                      Singapore
-                      {/* You can add a more specific address here if available */}
-                      {/* E.g., #01-XX, XYZ Building, 123 Street, Singapore 123456 */}
-                    </Card.Text>
-                    <a href="https://www.google.com/maps/search/Singapore+Maxi+Cab+Service" target="_blank" rel="noopener noreferrer" className="btn btn-outline-info btn-sm">
-                      View on Map
-                    </a>
-                  </Card.Body>
-                </Card>
+                
               </div>
             </Col>
           </Row>

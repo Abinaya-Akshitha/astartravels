@@ -119,13 +119,13 @@
 
 /* Call to Action Section */
 .cta-section {
-  background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.8)), url('../assets/singapore/singapore-night.jpg') no-repeat center center; /* Using brand blue overlay */
+  background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.8)), url('../assets/singapore/singapore-night.jpg') no-repeat center center;
   background-size: cover;
   color: #fff;
   padding: 5rem 0;
-  border-radius: 10px; /* Optional: adds rounded corners to the section */
-  margin: 3rem auto; /* Center the CTA if you want it distinct */
-  max-width: 95%; /* Make it slightly narrower than full width */
+  border-radius: 10px;
+  margin: 3rem auto;
+  max-width: 95%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -173,6 +173,10 @@
   .section-title {
     font-size: 2.2rem;
   }
+  /* For 3 cards per row on smaller desktops/laptops */
+  .service-card {
+    margin-bottom: 1.5rem; /* Ensure consistent spacing */
+  }
 }
 
 @media (max-width: 768px) {
@@ -193,6 +197,10 @@
   }
   .service-card .card-title {
     font-size: 1.3rem;
+  }
+  /* For 2 cards per row on tablets (md={6}) */
+  .service-card {
+    margin-bottom: 1.5rem; /* Ensure consistent spacing */
   }
   .cta-section {
     padding: 3rem 0;
@@ -228,6 +236,10 @@
   }
   .service-card .card-text {
     font-size: 0.85rem;
+  }
+  /* For 1 card per row on mobile (default Bootstrap behavior for Col without size) */
+  .service-card {
+    margin-bottom: 1.5rem; /* Ensure consistent spacing */
   }
   .cta-section h2 {
     font-size: 1.8rem;

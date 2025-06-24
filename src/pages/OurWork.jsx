@@ -1,20 +1,18 @@
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { FaBus, FaMapMarkedAlt } from 'react-icons/fa'; // Removed FaTicketAlt as the section is gone
-// Removed: import Navbar from '../components/Navbar'; // No longer needed
-// Removed: import Footer from '../components/Footer'; // No longer needed
-import './OurWork.css'; // Custom CSS for this page
+import { FaBus, FaMapMarkedAlt } from 'react-icons/fa';
+import './OurWork.css';
 
 // Import your images (replace with actual paths and filenames)
 import sentosaBg from '../assets/sen.webp';
 import malaysiaBg from '../assets/malaysia.jpg';
 import busCharterImg from '../assets/bus.webp';
-// Removed: import attractionTicketsImg from '../assets/ticket.jpg'; // No longer needed
 import marinabayBg from '../assets/marina.jpg';
+// NEW: Import image for Bird Paradise & Singapore Zoo
+import birdParadiseZooImg from '../assets/zoo.jpg'; // <--- IMPORTANT: Ensure this path and filename are correct
 
 function OurWork() {
   return (
     <>
-      {/* The outer div is kept for styling consistency with our-work-page class */}
       <div className="our-work-page">
         {/* Hero Section */}
         <div className="hero-section text-white text-center py-5">
@@ -37,7 +35,8 @@ function OurWork() {
               We will show you around Singapore's exotic places and its attractions. Experience the vibrant culture and iconic landmarks with our comfortable maxi cabs.
             </p>
             <Row className="g-4">
-              <Col md={6} lg={6}>
+              {/* MODIFIED: Column sizes for 3 cards per row (lg={4} for large screens, md={6} for medium screens) */}
+              <Col md={6} lg={4}>
                 <Card className="service-card shadow-sm h-100">
                   <Card.Img variant="top" src={sentosaBg} alt="Sentosa Island" />
                   <Card.Body>
@@ -49,7 +48,8 @@ function OurWork() {
                   </Card.Body>
                 </Card>
               </Col>
-              <Col md={6} lg={6}>
+              {/* MODIFIED: Column sizes for 3 cards per row */}
+              <Col md={6} lg={4}>
                 <Card className="service-card shadow-sm h-100">
                   <Card.Img variant="top" src={marinabayBg} alt="Marina Bay Sands and Gardens by the Bay" />
                   <Card.Body>
@@ -58,6 +58,20 @@ function OurWork() {
                       Immerse yourself in Singapore's stunning skyline and futuristic gardens. Visit Marina Bay Sands, the ArtScience Museum, and the Supertrees.
                     </Card.Text>
                     <Button variant="primary" href="/online-booking">Discover Marina Bay</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+              {/* NEW: Bird Paradise & Singapore Zoo Card */}
+              {/* MODIFIED: Column sizes for 3 cards per row */}
+              <Col md={6} lg={4}>
+                <Card className="service-card shadow-sm h-100">
+                  <Card.Img variant="top" src={birdParadiseZooImg} alt="Bird Paradise and Singapore Zoo" />
+                  <Card.Body>
+                    <Card.Title className="fw-bold">Bird Paradise & Singapore Zoo</Card.Title>
+                    <Card.Text>
+                      Explore the wonders of wildlife at Singapore Zoo and the vibrant avian world at Bird Paradise. Our maxi cabs offer comfortable transfers for a full day of animal encounters.
+                    </Card.Text>
+                    <Button variant="primary" href="/online-booking">Visit the Wildlife Parks</Button>
                   </Card.Body>
                 </Card>
               </Col>
@@ -103,7 +117,7 @@ function OurWork() {
                   <Card.Body>
                     <Card.Title className="fw-bold">Group & Event Transportation</Card.Title>
                     <Card.Text>
-                      Our spacious 7, 9, and 13-seater maxi cabs are perfect for transporting groups comfortably. Enjoy ample luggage space and a smooth ride for any occasion.
+                      Our spacious6, 7, 9, 13, 23 and 49-seater maxi cabs are perfect for transporting groups comfortably. Enjoy ample luggage space and a smooth ride for any occasion.
                     </Card.Text>
                     <Button variant="primary" href="/contact-us">Get a Charter Quote</Button>
                   </Card.Body>
@@ -113,49 +127,7 @@ function OurWork() {
           </Container>
         </section>
 
-        {/* Removed: Ticket Booking Section
-        <section id="ticket-booking" className="py-5 bg-white">
-          <Container>
-            <h2 className="text-center mb-5 fw-bold section-title">Attraction Ticket Booking <FaTicketAlt className="ms-2 icon-danger" /></h2>
-            <p className="text-center lead mb-5">
-              Enhance your visit to Singapore's top attractions! We are able to get you tickets to popular spots at a cheaper price than general admission.
-            </p>
-            <Row className="g-4 justify-content-center">
-              <Col md={8}>
-                <Card className="service-card shadow-sm text-center">
-                  <Card.Img variant="top" src={attractionTicketsImg} alt="Attraction Tickets" />
-                  <Card.Body>
-                    <Card.Title className="fw-bold">Discounted Tickets for Major Attractions</Card.Title>
-                    <Card.Text>
-                      Planning to visit Night Safari, Universal Studios, Adventure Cove, S.E.A. Aquarium, or other exciting places? Contact us for exclusive deals and cheaper ticket prices!
-                    </Card.Text>
-                    <Button variant="primary" href="/contact-us">Enquire About Tickets</Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        */}
-
-        {/* CTA Section */}
-        <section className="cta-section text-center py-5">
-          <Container>
-            <h2 className="display-5 fw-bold mb-4 text-white">Your Journey Starts Here</h2>
-            <p className="lead text-white mb-4">
-              Ready for a comfortable, enjoyable, and hassle-free travel experience? Let A Star Travels take you there!
-            </p>
-            <Button variant="success" size="lg" href="/online-booking" className="me-3">
-              Book Your Maxicab
-            </Button>
-            <Button variant="outline-light" size="lg" href="/contact-us">
-              Contact Us for More Info
-            </Button>
-          </Container>
-        </section>
-
       </div>
-      {/* Removed: <Footer /> */}
     </>
   );
 }

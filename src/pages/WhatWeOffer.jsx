@@ -1,27 +1,43 @@
 // src/pages/WhatWeOffer.jsx
-import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { FaCar, FaTv, FaWifi, FaLuggageCart, FaUsers } from 'react-icons/fa'; // Icons
-// IMPORTANT: Do NOT import Navbar or Footer here.
-// They are rendered globally in App.jsx.
-import './WhatWeOffer.css'; // Don't forget to create this CSS file
+import React, { useRef, useState } from 'react';
+import { Container, Row, Col, Card, Button, Carousel } from 'react-bootstrap';
+import { FaCar, FaTv, FaWifi, FaLuggageCart, FaUsers, FaChair, FaChargingStation, FaVideo, FaImage } from 'react-icons/fa';
+import './WhatWeOffer.css';
 
-// Import your cab images and video file
-// REPLACE THESE WITH YOUR ACTUAL IMAGE AND VIDEO FILE NAMES/PATHS!
-import cab7SeaterImg from '../assets/7seater.jpg'; 
-import cab13SeaterImg from '../assets/13seater.jpg'; // Example: image of a 13-seater (can be same as 6-13 general)
-import cab6to13SeaterImg from '../assets/6seater.jpg'; // Example: general image for 6-13 (if different from 7/13 specific)
-import cabWalkthroughVideo from '../assets/video.mp4'; // YOUR VIDEO FILE HERE
+// IMPORTANT: Replace these with YOUR ACTUAL IMAGE AND VIDEO FILE NAMES/PATHS!
+import cab7SeaterImg from '../assets/7seater.jpg';
+import cab9to13SeaterImg from '../assets/13seater.jpg';
+import cab23to49SeaterImg from '../assets/23-49.webp';
+import cabWalkthroughVideo from '../assets/video.mp4';
+import cabVideoThumbnail from '../assets/c3.jpg'; // Your video thumbnail image
+
+// NEW: Import your interior cab photos
+import interiorPhoto1 from '../assets/c1.jpg';
+import interiorPhoto2 from '../assets/c2.jpg';
+import interiorPhoto3 from '../assets/c3.jpg';
+import interiorPhoto4 from '../assets/c4.jpg';
+import interiorPhoto5 from '../assets/c5.jpg'; // <--- NEW: Import your 5th interior image
 
 function WhatWeOffer() {
+  const videoRef = useRef(null);
+  const [videoPlaying, setVideoPlaying] = useState(false);
+
+  const playVideo = () => {
+    setVideoPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
   return (
     <div className="what-we-offer-page">
       {/* Hero Section */}
       <div className="what-we-offer-hero text-white text-center py-5">
         <Container>
-          <h1 className="display-4 fw-bold mb-3">Our Fleet & Services</h1>
+          <h1 className="display-4 fw-bold mb-3">Our Diverse Fleet & Premium Services</h1>
           <p className="lead mb-4">
-            Discover the perfect ride for your needs. We offer a range of comfortable and well-equipped maxi cabs for every occasion.
+            Your trusted partner for comfortable, reliable, and spacious 7, 9,
+            and 13-seater Maxi Cabs.
           </p>
         </Container>
       </div>
@@ -29,39 +45,21 @@ function WhatWeOffer() {
       {/* Maxi Cab Offerings Section */}
       <section className="py-5 bg-light-blue">
         <Container>
-          <h2 className="text-center mb-5 fw-bold section-title">Choose Your Perfect Ride</h2>
-          <Row className="g-4">
-            {/* 6-13 Seater Maxi Cab */}
-            <Col md={6} lg={4}>
-              <Card className="service-card shadow-sm h-100">
-                <Card.Img variant="top" src={cab6to13SeaterImg} alt="6-13 Seater Maxi Cab" />
-                <Card.Body>
-                  <Card.Title className="fw-bold">6-13 SEATER MAXI CAB</Card.Title>
-                  <Card.Text>
-                    <p>Ideal for larger groups, family outings, or corporate transfers, our spacious maxi cabs accommodate 6 to 13 passengers comfortably with ample luggage space.</p>
-                    <ul>
-                      <li><FaUsers className="me-2 text-primary" />Capacity: 6-13 Passengers</li>
-                      <li><FaLuggageCart className="me-2 text-primary" />Large Luggage Capacity</li>
-                      <li><FaCar className="me-2 text-primary" />Perfect for airport transfers, city tours, cross-border trips.</li>
-                    </ul>
-                  </Card.Text>
-                  <Button variant="primary" href="/online-booking">Book 6-13 Seater</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
+          <h2 className="text-center mb-5 fw-bold section-title">Choose Your Ideal Transportation</h2>
+          <Row className="g-4 justify-content-center">
             {/* 7 Seater Maxi Cab */}
             <Col md={6} lg={4}>
               <Card className="service-card shadow-sm h-100">
                 <Card.Img variant="top" src={cab7SeaterImg} alt="7 Seater Maxi Cab" />
                 <Card.Body>
-                  <Card.Title className="fw-bold">7 SEATER MAXI CAB</Card.Title>
-                  <Card.Text>
-                    <p>Our popular 7-seater maxi cabs offer a perfect balance of space and comfort, suitable for medium-sized groups or families with extra luggage.</p>
+                  <Card.Title className="fw-bold">7 Seater Maxi Cab</Card.Title>
+                  <Card.Text as="div">
+                    <p>Our popular 7-seater maxi cabs provide a perfect blend of space and intimacy, suitable for medium-sized groups or families with luggage.</p>
                     <ul>
                       <li><FaUsers className="me-2 text-primary" />Capacity: Up to 7 Passengers</li>
-                      <li><FaLuggageCart className="me-2 text-primary" />Comfortable Seating</li>
-                      <li><FaCar className="me-2 text-primary" />Great for local commutes, shopping trips, special events.</li>
+                      <li><FaLuggageCart className="me-2 text-primary" />Generous Luggage Compartment</li>
+                      <li><FaChair className="me-2 text-primary" />Plush, Comfortable Seating</li>
+                      <li><FaChargingStation className="me-2 text-primary" />Convenient Charging Points</li>
                     </ul>
                   </Card.Text>
                   <Button variant="primary" href="/online-booking">Book 7 Seater</Button>
@@ -69,21 +67,43 @@ function WhatWeOffer() {
               </Card>
             </Col>
 
-            {/* 6 Seater Maxi Cab */}
+            {/* 9-13 Seater Maxi Cab */}
             <Col md={6} lg={4}>
               <Card className="service-card shadow-sm h-100">
-                <Card.Img variant="top" src={cab6to13SeaterImg} alt="6 Seater Maxi Cab" /> {/* Using same image as 6-13 for now */}
+                <Card.Img variant="top" src={cab9to13SeaterImg} alt="9-13 Seater Maxi Cab" />
                 <Card.Body>
-                  <Card.Title className="fw-bold">6 SEATER MAXI CAB</Card.Title>
-                  <Card.Text>
-                    <p>For smaller groups or executive travel, our 6-seater maxi cabs provide a cozy yet spacious environment, ensuring a relaxed journey.</p>
+                  <Card.Title className="fw-bold">9-13 Seater Maxi Cab</Card.Title>
+                  <Card.Text as="div">
+                    <p>Ideal for larger families, tour groups, or corporate transfers, our spacious 9 to 13-seater maxi cabs offer supreme comfort and functionality.</p>
                     <ul>
-                      <li><FaUsers className="me-2 text-primary" />Capacity: Up to 6 Passengers</li>
-                      <li><FaCar className="me-2 text-primary" />Executive comfort.</li>
-                      <li><FaLuggageCart className="me-2 text-primary" />Ideal for business travel or intimate groups.</li>
+                      <li><FaUsers className="me-2 text-primary" />Capacity: 9-13 Passengers</li>
+                      <li><FaLuggageCart className="me-2 text-primary" />Ample Luggage Space</li>
+                      <li><FaChair className="me-2 text-primary" />Comfortable Push-back Seats</li>
+                      <li><FaChargingStation className="me-2 text-primary" />Device Charging Ports</li>
                     </ul>
                   </Card.Text>
-                  <Button variant="primary" href="/online-booking">Book 6 Seater</Button>
+                  <Button variant="primary" href="/online-booking">Book 9-13 Seater</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            {/* NEW: 23-49 Seater Cab */}
+            <Col md={6} lg={4}>
+              <Card className="service-card shadow-sm h-100">
+                <Card.Img variant="top" src={cab23to49SeaterImg} alt="23-49 Seater Cab" />
+                <Card.Body>
+                  <Card.Title className="fw-bold">23-49 Seater Bus Charter</Card.Title>
+                  <Card.Text as="div">
+                    <p>For school trips, corporate events, or large group excursions, our spacious buses ensure everyone travels together in ultimate comfort.</p>
+                    <ul>
+                      <li><FaUsers className="me-2 text-primary" />Capacity: 23-49 Passengers</li>
+                      <li><FaLuggageCart className="me-2 text-primary" />Massive Luggage Capacity</li>
+                      <li><FaChair className="me-2 text-primary" />Ergonomic & Comfortable Seats</li>
+                      <li><FaChargingStation className="me-2 text-primary" />Power Outlets for Devices</li>
+                      <li><FaTv className="me-2 text-primary" />Onboard Entertainment Systems</li>
+                    </ul>
+                  </Card.Text>
+                  <Button variant="primary" href="/contact-us">Get a Bus Quote</Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -91,28 +111,113 @@ function WhatWeOffer() {
         </Container>
       </section>
 
-      {/* Cab Walkthrough Video Section */}
+      {/* NEW: Cab Interior Photo Gallery Section */}
+      <section className="py-5 bg-white text-center">
+        <Container>
+          <h2 className="mb-4 fw-bold section-title">Glimpse Inside Our Vehicles <FaImage className="ms-2" /></h2>
+          <p className="lead mb-4">
+            Explore the comfort and quality of our interiors through these high-resolution images.
+          </p>
+          <Row className="justify-content-center">
+            <Col md={10} lg={8}>
+              <Carousel className="interior-carousel shadow-lg">
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={interiorPhoto1}
+                    alt="First slide - Cab Interior"
+                  />
+                  {/* <Carousel.Caption>
+                    <h5>Spacious Seating</h5>
+                    <p>Enjoy ample legroom and comfortable seating.</p>
+                  </Carousel.Caption> */}
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={interiorPhoto2}
+                    alt="Second slide - Cab Interior"
+                  />
+                  {/* <Carousel.Caption>
+                    <h5>Clean & Modern Design</h5>
+                    <p>Our cabs are meticulously maintained for your pleasure.</p>
+                  </Carousel.Caption> */}
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={interiorPhoto3}
+                    alt="Third slide - Cab Interior"
+                  />
+                  {/* <Carousel.Caption>
+                    <h5>Charging Ports Available</h5>
+                    <p>Keep your devices powered throughout your journey.</p>
+                  </Carousel.Caption> */}
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={interiorPhoto4}
+                    alt="Fourth slide - Cab Interior"
+                  />
+                  {/* <Carousel.Caption>
+                    <h5>Generous Luggage Space</h5>
+                    <p>Travel with all your belongings stress-free.</p>
+                  </Carousel.Caption> */}
+                </Carousel.Item>
+                <Carousel.Item> {/* <--- NEW: Fifth Carousel Item */}
+                  <img
+                    className="d-block w-100"
+                    src={interiorPhoto5}
+                    alt="Fifth slide - Cab Interior"
+                  />
+                  {/* <Carousel.Caption>
+                    <h5>Premium Comfort</h5>
+                    <p>Designed for your ultimate travel experience.</p>
+                  </Carousel.Caption> */}
+                </Carousel.Item>
+                {/* Add more Carousel.Item for more photos if needed */}
+              </Carousel>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Cab Walkthrough Video Section - IMPROVED */}
       <section className="py-5 bg-light-gray text-center">
         <Container>
-          <h2 className="mb-4 fw-bold section-title">Take a Virtual Tour of Our Cabs</h2>
+          <h2 className="mb-4 fw-bold section-title">Take a Virtual Tour <FaVideo className="ms-2" /></h2>
           <p className="lead mb-4">
-            See for yourself the comfort and features of our maxi cabs.
+            Click the image below to watch a detailed video walkthrough of our vehicles.
           </p>
-          <div className="video-container">
-            <video controls width="100%" height="auto" src={cabWalkthroughVideo}>
+          <div
+            className="video-placeholder-container"
+            onClick={playVideo}
+            style={{ display: videoPlaying ? 'none' : 'block' }}
+          >
+            <img
+              src={cabVideoThumbnail}
+              alt="Virtual Cab Tour Thumbnail"
+              className="video-thumbnail"
+            />
+            <div className="play-button">
+              <FaVideo className="play-icon" />
+            </div>
+          </div>
+          <div
+            className="responsive-video-wrapper"
+            style={{ display: videoPlaying ? 'block' : 'none' }}
+          >
+            <video controls className="responsive-video" ref={videoRef}>
+              <source src={cabWalkthroughVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
         </Container>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-5 bg-primary text-white text-center">
-        <Container>
-          <h2 className="display-5 fw-bold mb-4">Ready for a Premium Travel Experience?</h2>
-          <Button variant="light" size="lg" href="/online-booking">Book Your Maxi Cab Now</Button>
-        </Container>
-      </section>
+      {/* CTA Section has been removed as requested */}
+
     </div>
   );
 }

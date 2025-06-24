@@ -7,7 +7,8 @@
 
 /* Hero Section Styling */
 .contact-us-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/contact-us-hero.jpg') center center no-repeat;
+  /* Ensure the path to ccc.jpg is correct */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/ccc.jpg') center center no-repeat;
   background-size: cover;
   min-height: 350px; /* Slightly smaller hero */
   display: flex;
@@ -24,7 +25,7 @@
 
 .contact-us-hero p {
   font-size: 1.15rem;
-  max-width: 700px;
+  max-width: 700px; /* Constrain paragraph width even within the container */
   margin: 0 auto;
 }
 
@@ -91,6 +92,9 @@
 .map-container {
   height: 450px; /* Fixed height for the map */
   overflow: hidden; /* Ensure iframe corners are rounded */
+  /* Added max-width and margin: auto for better control on large screens */
+  max-width: 1140px; /* Corresponds to Bootstrap's largest container width (xl breakpoint) */
+  margin: 0 auto; /* Center the map container */
 }
 
 .map-container iframe {
@@ -126,4 +130,17 @@
   .map-container {
     height: 300px; /* Smaller map height on mobile */
   }
+}
+
+/* Custom breakpoint for even larger screens if needed, or to fine-tune the container */
+@media (min-width: 1200px) { /* For extra large screens */
+  /* You can set a specific max-width for the main content container if needed */
+  .contact-us-page .container {
+    max-width: 1140px; /* Ensure consistency with map-container max-width */
+  }
+}
+
+/* Optional: Add a general max-width to the main content sections for very wide screens */
+.contact-us-page section > .container {
+  max-width: 1200px; /* Or whatever maximum width you prefer */
 }

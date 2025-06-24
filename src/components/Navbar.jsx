@@ -33,7 +33,7 @@ function NavigationBar() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top" collapseOnSelect> {/* collapseOnSelect helps close on mobile */}
       <Container>
-        <Navbar.Brand as={Link} to="/">A Star Travels</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">A Star Travels Pte.Ltd</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">

@@ -1,0 +1,57 @@
+/* src/pages/TermsConditions.css */
+
+.terms-conditions-page {
+  padding-top: 56px; /* Adjust based on your Navbar height */
+  background-color: #f8f9fa; /* Light background */
+  min-height: 80vh; /* Ensure it takes up sufficient height */
+}
+
+.terms-conditions-page h1 {
+  color: #007bff; /* Primary blue for main title */
+  font-size: 2.8rem;
+}
+
+.terms-conditions-page h2 {
+  color: #343a40; /* Darker grey for section titles */
+  font-size: 1.8rem;
+  border-bottom: 2px solid #e9ecef; /* Subtle underline */
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+
+.terms-conditions-page p {
+  line-height: 1.7;
+  color: #495057;
+  margin-bottom: 1rem;
+}
+
+.terms-conditions-page ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
+  color: #495057;
+}
+
+.terms-conditions-page ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.terms-conditions-page a {
+  color: #007bff; /* Link color */
+  text-decoration: none;
+}
+
+.terms-conditions-page a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .terms-conditions-page h1 {
+    font-size: 2.2rem;
+  }
+  .terms-conditions-page h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -11,6 +11,7 @@ import WhyUs from './pages/WhyUs';
 import WhatWeOffer from './pages/WhatWeOffer';
 import ContactUs from './pages/ContactUs';
 import OnlineBooking from './pages/OnlineBooking';
+import TermsConditions from './pages/TermsConditions'; // <--- NEW IMPORT
 
 function AppContent() {
   const location = useLocation();
@@ -42,6 +43,8 @@ function AppContent() {
               <Route path="/what-we-offer" element={<WhatWeOffer />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/online-booking" element={<OnlineBooking />} />
+              <Route path="/terms-conditions" element={<TermsConditions />} /> {/* <--- NEW ROUTE */}
+
             </Routes>
           </div>
         </CSSTransition>
