@@ -135,9 +135,9 @@ function OnlineBooking() {
                         required
                       >
                         <option value="">Choose Vehicle...</option>
-                        <option value="6-seater">6 Seater Maxi Cab</option>
                         <option value="7-seater">7 Seater Maxi Cab</option>
-                        <option value="13-seater">13 Seater Maxi Cab</option>
+                        <option value="9-13-seater">9-13 Seater Maxi Cab</option>
+                        <option value="23-49-seater">23-49 Seater Bus Charter</option>
                         {/* Add other specific vehicles if applicable */}
                       </Form.Select>
                     </Form.Group>
