@@ -1,11 +1,8 @@
 // src/pages/ContactUs.jsx
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'; // Added FaWhatsapp for a common contact method
-
-import './ContactUs.css'; // Don't forget to create this CSS file
-
-// Import hero background image (ensure you have this in assets or update path)
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import './ContactUs.css';
 import contactUsHeroBg from '../assets/ccc.jpg';
 
 function ContactUs() {
@@ -25,26 +22,33 @@ function ContactUs() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real application, you would send this data to a backend server.
-    // For now, we'll just log it to the console.
-    console.log('Form data submitted:', formData);
 
-    alert('Your message has been sent! We will get back to you shortly.');
-    setFormData({ // Clear form after submission
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    });
+    try {
+      const response = await fetch('https://astartravels-backend.onrender.com/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    // IMPORTANT: For actual email sending, you'll need a backend.
-    // Options include:
-    // 1. Using a service like Formspree.io (free for basic use)
-    // 2. Setting up a server-side API (e.g., Node.js with Nodemailer, Python with Flask/Django)
-    // 3. Using a platform's built-in forms (e.g., Netlify Forms, Vercel Forms)
+      if (response.ok) {
+        const data = await response.json();
+        alert('✅ Your message has been sent! We will get back to you shortly.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        alert('❌ Failed to send your message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('⚠️ An error occurred. Please try again later.');
+    }
   };
 
   return (
@@ -179,8 +183,6 @@ function ContactUs() {
                     </Card.Text>
                   </Card.Body>
                 </Card>
-
-                
               </div>
             </Col>
           </Row>
@@ -192,8 +194,6 @@ function ContactUs() {
         <Container>
           <h2 className="text-center mb-4 fw-bold section-title">Find Us on the Map</h2>
           <div className="map-container rounded shadow-lg">
-            {/* Google Maps Embed Code goes here */}
-            {/* Replace the iframe src with your actual Google Maps embed for your business */}
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.086389658797!2d103.80879575!3d1.35039235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11b51e944439%3A0xc3457005477615b!2sSingapore!5e0!3m2!1sen!2sin!4v1718000000000!5m2!1sen!2sin"
               width="100%"
@@ -211,7 +211,7 @@ function ContactUs() {
         </Container>
       </section>
 
-      {/* CTA Section (Optional, if not already covered by form/info) */}
+      {/* CTA Section */}
       <section className="py-4 bg-primary text-white text-center">
         <Container>
           <p className="lead mb-0">Have an urgent query? Call us directly!</p>
