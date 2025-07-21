@@ -36,8 +36,8 @@ function WhatWeOffer() {
         <Container>
           <h1 className="display-4 fw-bold mb-3">Our Diverse Fleet & Premium Services</h1>
           <p className="lead mb-4">
-            Your trusted partner for comfortable, reliable, and spacious 7, 9,
-            and 13-seater Maxi Cabs.
+            Your trusted partner for comfortable, reliable, and spacious 6, 7, 9, 13,
+23 and 49-seater Maxi Cabs.
           </p>
         </Container>
       </div>

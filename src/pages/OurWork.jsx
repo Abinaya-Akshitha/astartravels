@@ -103,30 +103,6 @@ function OurWork() {
           </Container>
         </section>
 
-        {/* Bus Charters Section */}
-        <section id="bus-charters" className="py-5 bg-light-gray">
-          <Container>
-            <h2 className="text-center mb-5 fw-bold section-title">Comfortable Bus Charters <FaBus className="ms-2 icon-success" /></h2>
-            <p className="text-center lead mb-5">
-              Sometimes getting where you need to go can be more than just a job, it can be an enjoyable experience. With our Bus Charters services, that’s what we set out to do. Ideal for group outings, corporate events, and school excursions.
-            </p>
-            <Row className="g-4 justify-content-center">
-              <Col md={8}>
-                <Card className="service-card shadow-sm text-center">
-                  <Card.Img variant="top" src={busCharterImg} alt="Bus Charters" />
-                  <Card.Body>
-                    <Card.Title className="fw-bold">Group & Event Transportation</Card.Title>
-                    <Card.Text>
-                      Our spacious6, 7, 9, 13, 23 and 49-seater maxi cabs are perfect for transporting groups comfortably. Enjoy ample luggage space and a smooth ride for any occasion.
-                    </Card.Text>
-                    <Button variant="primary" href="/contact-us">Get a Charter Quote</Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-
       </div>
     </>
   );
