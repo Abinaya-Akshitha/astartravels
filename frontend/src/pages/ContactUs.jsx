@@ -24,6 +24,7 @@ function ContactUs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  console.log('Submitting form data...', formData); // 👈 Add this
 
     try {
       const response = await fetch('https://astartravels-backend.onrender.com/contact', {
