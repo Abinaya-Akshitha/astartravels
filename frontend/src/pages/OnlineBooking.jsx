@@ -225,7 +225,6 @@ function OnlineBooking() {
                       <Form.Control
                         type="number"
                         min="1"
-                        max={bookingData.vehicleType === '6-seater' ? 6 : bookingData.vehicleType === '7-seater' ? 7 : bookingData.vehicleType === '13-seater' ? 13 : 13} // Max passengers based on vehicle type
                         name="passengers"
                         value={bookingData.passengers}
                         onChange={handleChange}
