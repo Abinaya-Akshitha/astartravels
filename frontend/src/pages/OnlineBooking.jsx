@@ -33,15 +33,23 @@ function OnlineBooking() {
       [name]: value,
     }));
   };
+  
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // In a real application, this data would be sent to a backend for processing
-    // (e.g., saving to database, sending confirmation emails, processing payment).
-    console.log('Booking data submitted:', bookingData);
+  try {
+    const response = await fetch('https://astartravels-backend.onrender.com/booking', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(bookingData)
+    });
 
-    alert('Your booking request has been sent! We will confirm details shortly.');
-    // You might clear the form or redirect the user after submission
+    if (response.ok) {
+      const data = await response.json();
+      alert("✅ Your booking was submitted successfully!");
+
     setBookingData({ // Clear form after submission
       serviceType: '',
       vehicleType: '',
@@ -57,7 +65,14 @@ function OnlineBooking() {
       specialRequests: '',
       tripType: 'one-way'
     });
-  };
+  }else {
+      alert("❌ Failed to submit your booking. Please try again.");
+    }
+  } catch (error) {
+    console.error("Booking submission error:", error);
+    alert("⚠️ Something went wrong. Please try again later.");
+  }
+};
 
   return (
     <div className="online-booking-page">
