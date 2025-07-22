@@ -1,14 +1,14 @@
 // Import required modules
-const express = require('express');         // ✅ Express framework
-const cors = require('cors');               // ✅ CORS to allow frontend
+const express = require('express');
+const cors = require('cors');
 
 // Create Express app
-const app = express();                      // ✅ Initialize express app
-const PORT = 5000;                          // Server port
+const app = express();
+const PORT = 5000;
 
 // ---------- MIDDLEWARE ----------
-app.use(cors());                            // Allow cross-origin (frontend/backend)
-app.use(express.json());                    // Parse incoming JSON
+app.use(cors());
+app.use(express.json());
 
 // ---------- ROUTES ----------
 
@@ -34,13 +34,36 @@ app.post('/contact', (req, res) => {
 
 // Booking form submission
 app.post('/booking', (req, res) => {
-  const { name, email, date, details } = req.body;
+  const {
+    serviceType,
+    vehicleType,
+    pickupDate,
+    pickupTime,
+    pickupLocation,
+    dropoffLocation,
+    passengers,
+    luggage,
+    fullName,
+    email,
+    phone,
+    specialRequests,
+    tripType
+  } = req.body;
 
   console.log('📅 New Booking Submission:');
-  console.log('Name:', name);
+  console.log('Trip Type:', tripType);
+  console.log('Service Type:', serviceType);
+  console.log('Vehicle Type:', vehicleType);
+  console.log('Pickup Date:', pickupDate);
+  console.log('Pickup Time:', pickupTime);
+  console.log('Pickup Location:', pickupLocation);
+  console.log('Drop-off Location:', dropoffLocation);
+  console.log('Passengers:', passengers);
+  console.log('Luggage:', luggage);
+  console.log('Full Name:', fullName);
   console.log('Email:', email);
-  console.log('Date:', date);
-  console.log('Details:', details);
+  console.log('Phone:', phone);
+  console.log('Special Requests:', specialRequests);
   console.log('------------------------');
 
   res.status(200).json({ message: '✅ Booking form received successfully!' });
