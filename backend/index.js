@@ -40,7 +40,7 @@ app.post('/contact', (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'astartravels.sg@gmail.com', 
+    to: 'akshithasaravanan31@gmail.com', 
     subject: `📧 New Contact: ${subject}`,
     text: `
 You have a new contact message:
@@ -103,7 +103,7 @@ app.post('/booking', (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'astartravels.sg@gmail.com', 
+    to: 'akshithasaravanan31@gmail.com', 
     subject: `🚌 New Booking from ${fullName}`,
     text: `
 A new booking has been submitted:
