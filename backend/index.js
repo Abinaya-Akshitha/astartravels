@@ -6,7 +6,7 @@ require('dotenv').config(); // Loads .env if running locally
 
 // 🚀 Create Server
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // 🔧 Middleware
 app.use(cors());
@@ -16,8 +16,8 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // e.g. example@gmail.com (SENDER)
-    pass: process.env.EMAIL_PASS  // Gmail App Password (from https://myaccount.google.com/apppasswords)
+    user: process.env.EMAIL_USER, 
+    pass: process.env.EMAIL_PASS  
   }
 });
 
@@ -40,7 +40,7 @@ app.post('/contact', (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'astartravels.sg@gmail.com', // Change this to your client's email
+    to: 'astartravels.sg@gmail.com', 
     subject: `📧 New Contact: ${subject}`,
     text: `
 You have a new contact message:
@@ -103,7 +103,7 @@ app.post('/booking', (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'astartravels.sg@gmail.com', // Change to your client email
+    to: 'astartravels.sg@gmail.com', 
     subject: `🚌 New Booking from ${fullName}`,
     text: `
 A new booking has been submitted:
